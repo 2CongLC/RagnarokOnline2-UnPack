@@ -65,9 +65,9 @@ Module Program
         Directory.CreateDirectory(des & Path.GetDirectoryName(fullName))
 
         If isFolder = 1 Then
-            Throw New Exception("Fuck!")
+            Console.WriteLine("Fuck!")
         End If
-
+        Console.WriteLine("File name : {0} - File sizeUmcompressed : {1} - File Fullname : {2}", name, sizeUncompressed, fullName)
         Using fs As FileStream = File.Create(des & fullName)
             If sizeUncompressed = sizeCompressed Then
                 Using bw As New BinaryWriter(fs)
